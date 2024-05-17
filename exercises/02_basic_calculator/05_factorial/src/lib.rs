@@ -1,5 +1,12 @@
 // Define a function named `factorial` that, given a non-negative integer `n`,
 // returns `n!`, the factorial of `n`.
+fn factorial(n: u32) -> u32 {
+    match n {
+        0 => 1,
+        _ => n * factorial(n - 1)
+    }
+}
+
 //
 // The factorial of `n` is defined as the product of all positive integers up to `n`.
 // For example, `5!` (read "five factorial") is `5 * 4 * 3 * 2 * 1`, which is `120`.

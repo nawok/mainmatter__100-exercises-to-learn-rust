@@ -1,5 +1,5 @@
 mod ticket {
-    struct Ticket {
+    pub struct Ticket {
         title: String,
         description: String,
         status: String,
@@ -34,7 +34,6 @@ mod ticket {
 
 // TODO: **Exceptionally**, you'll be modifying both the `ticket` module and the `tests` module
 //  in this exercise.
-#[cfg(test)]
 mod tests {
     // TODO: Add the necessary `pub` modifiers in the parent module to remove the compiler
     //  errors about the use statement below.
@@ -43,8 +42,9 @@ mod tests {
     // Be careful though! We don't want this function to compile after you have changed
     // visibility to make the use statement compile!
     // Once you have verified that it indeed doesn't compile, comment it out.
+    #[test]
     fn should_not_be_possible() {
-        let ticket = Ticket::new("A title".into(), "A description".into(), "To-Do".into());
+        // let ticket = Ticket::new("A title".into(), "A description".into(), "To-Do".into());
 
         // You should be seeing this error when trying to run this exercise:
         //
@@ -55,7 +55,7 @@ mod tests {
         //
         // TODO: Once you have verified that the below does not compile,
         //   comment the line out to move on to the next exercise!
-        assert_eq!(ticket.description, "A description");
+        // assert_eq!(ticket.description, "A description");
     }
 
     fn encapsulation_cannot_be_violated() {
@@ -68,10 +68,10 @@ mod tests {
         //
         // TODO: Once you have verified that the below does not compile,
         //   comment the lines out to move on to the next exercise!
-        let ticket = Ticket {
-            title: "A title".into(),
-            description: "A description".into(),
-            status: "To-Do".into(),
-        };
+        // let ticket = Ticket {
+        //     title: "A title".into(),
+        //     description: "A description".into(),
+        //     status: "To-Do".into(),
+        // };
     }
 }
